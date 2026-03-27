@@ -1,0 +1,12 @@
+[
+  {
+    "id": 1,
+    "school": "请填写你的学校",
+    "degree": "请填写你的学位",
+    "major": "请填写你的专业",
+    "startDate": "20XX.09",
+    "endDate": "20XX.06",
+    "description": "请填写教育经历描述",
+    "location": "请填写所在城市"
+  }
+]

@@ -1,0 +1,11 @@
+[
+  {
+    "id": 1,
+    "company": "请填写公司名称",
+    "role": "请填写职位",
+    "startDate": "20XX.XX",
+    "endDate": "Present",
+    "description": "请填写工作经历描述",
+    "tags": ["请填写技术标签"]
+  }
+]
