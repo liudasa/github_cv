@@ -1,112 +1,183 @@
 .home {
-  display: flex;
-  flex-direction: column;
-  gap: 48px;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
 }
 
 .hero {
-  padding-top: 20px;
+  text-align: left;
+  padding: 3rem 0 4rem;
+  border-bottom: 1px solid var(--border-color, #e5e7eb);
+  margin-bottom: 3rem;
 }
 
 .greeting {
-  font-size: 1rem;
-  color: var(--text-secondary);
-  margin-bottom: 8px;
+  font-size: 1.1rem;
+  color: var(--text-secondary, #6b7280);
+  margin: 0 0 0.5rem;
 }
 
 .name {
   font-size: 2rem;
-  font-weight: 800;
-  color: var(--text-primary);
-  letter-spacing: -0.03em;
-  line-height: 1.2;
-  margin-bottom: 8px;
+  font-weight: 700;
+  color: var(--text-primary, #1a1a2e);
+  margin: 0 0 0.5rem;
 }
 
-.highlight {
-  background: linear-gradient(135deg, var(--accent-color), var(--accent-light));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.motto {
-  font-size: 0.9375rem;
-  color: var(--text-secondary);
+.slogan {
+  font-size: 1rem;
   font-style: italic;
-  margin-bottom: 20px;
+  color: var(--text-muted, #868e96);
+  margin: 0 0 1.5rem;
 }
 
-.intro {
-  font-size: 0.9375rem;
-  color: var(--text-secondary);
-  line-height: 1.7;
-  margin-bottom: 12px;
+.bio {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-secondary, #4b5563);
+  white-space: pre-line;
+  margin: 0 0 0.75rem;
 }
 
-.introZh {
-  font-size: 0.875rem;
-  color: var(--text-tertiary);
-  line-height: 1.7;
-  margin-bottom: 20px;
-}
-
-.links {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-
-.socialLink {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  padding: 6px 14px;
-  border-radius: 8px;
-  font-size: 0.8125rem;
-  font-weight: 500;
-  color: var(--accent-color);
-  background: var(--accent-bg);
-  text-decoration: none;
-  transition: all 0.2s ease;
-}
-
-.socialLink:hover {
-  background: var(--accent-bg-hover);
+.bioZh {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: var(--text-muted, #868e96);
+  white-space: pre-line;
 }
 
 .section {
-  /* section spacing handled by parent gap */
+  margin-bottom: 3rem;
+}
+
+.newsSection {
+  margin-bottom: 2rem;
 }
 
 .newsList {
   display: flex;
   flex-direction: column;
-  gap: 12px;
 }
 
 .newsItem {
   display: flex;
-  gap: 16px;
   align-items: baseline;
-  font-size: 0.875rem;
+  gap: 1rem;
+  padding: 0.25rem 0;
+  font-size: 0.95rem;
 }
 
 .newsDate {
-  color: var(--text-tertiary);
-  font-size: 0.8125rem;
-  white-space: nowrap;
-  flex-shrink: 0;
-  min-width: 64px;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  min-width: 60px;
 }
 
 .newsContent {
-  color: var(--text-secondary);
-  line-height: 1.5;
+  color: var(--text-primary);
 }
 
-.cardList {
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.sectionTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-primary, #1a1a2e);
+  margin: 0;
+}
+
+.blogList {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 1rem;
+}
+
+.blogItem {
+  display: block;
+  padding: 1.25rem;
+  background: var(--bg-primary, #ffffff);
+  border: 1px solid var(--border-color, #e5e7eb);
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+
+.blogItem:hover {
+  border-color: var(--accent-primary, #000000);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.blogTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary, #1a1a2e);
+  margin: 0 0 0.5rem;
+}
+
+.blogSummary {
+  font-size: 0.9rem;
+  color: var(--text-secondary, #6b7280);
+  line-height: 1.6;
+  margin: 0 0 0.75rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.blogMeta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+}
+
+.blogDate {
+  color: var(--text-muted, #9ca3af);
+}
+
+.blogTags {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.blogTag {
+  background: var(--bg-tertiary, #f3f4f6);
+  color: var(--text-secondary, #4b5563);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+}
+
+.footer {
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-color, #e5e7eb);
+  text-align: center;
+}
+
+.footerText {
+  font-size: 0.75rem;
+  color: #c0c0c0;
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+  .name {
+    font-size: 1.5rem;
+  }
+
+  .hero {
+    padding: 2rem 0 3rem;
+  }
+
+  .sectionHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
 }

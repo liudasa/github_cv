@@ -2,71 +2,54 @@ import education from '../data/education.json'
 import experiences from '../data/experiences.json'
 import skills from '../data/skills.json'
 import awards from '../data/awards.json'
-import Tag from '../components/Tag'
-import SectionTitle from '../components/SectionTitle'
 import styles from './CV.module.css'
 
 function CV() {
+  const skillEntries = Object.entries(skills)
+
   return (
     <div className={styles.cv}>
-      <h1 className={styles.pageTitle}>Curriculum Vitae</h1>
-
       <section className={styles.section}>
-        <SectionTitle>Education</SectionTitle>
-        <div className={styles.timeline}>
+        <h2 className={styles.sectionTitle}>教育背景</h2>
+        <div className={styles.list}>
           {education.map((item) => (
-            <div key={item.id} className={styles.timelineItem}>
-              <div className={styles.timelineHeader}>
-                <div>
-                  <h3 className={styles.itemTitle}>{item.school}</h3>
-                  <p className={styles.itemSubtitle}>{item.degree} · {item.major}</p>
+            <div key={item.id} className={styles.item}>
+              <div className={styles.itemHeader}>
+                <div className={styles.itemTitle}>
+                  <span className={styles.name}>{item.degree}</span>
                 </div>
-                <div className={styles.timelineMeta}>
-                  <span className={styles.itemDate}>{item.startDate} - {item.endDate}</span>
-                  <span className={styles.itemLocation}>{item.location}</span>
-                </div>
+                <span className={styles.period}>{item.startDate} - {item.endDate}</span>
               </div>
-              <p className={styles.itemDescription}>{item.description}</p>
+              <div className={styles.itemContent}>
+                <p className={styles.infoLine}>
+                  <span>{item.school}</span>
+                  {item.major && <span> · {item.major}</span>}
+                </p>
+                {item.description && (
+                  <p className={styles.infoLine}>{item.description}</p>
+                )}
+              </div>
             </div>
           ))}
         </div>
       </section>
 
       <section className={styles.section}>
-        <SectionTitle>Experience</SectionTitle>
-        <div className={styles.timeline}>
+        <h2 className={styles.sectionTitle}>工作经历</h2>
+        <div className={styles.list}>
           {experiences.map((item) => (
-            <div key={item.id} className={styles.timelineItem}>
-              <div className={styles.timelineHeader}>
-                <div>
-                  <h3 className={styles.itemTitle}>{item.company}</h3>
-                  <p className={styles.itemSubtitle}>{item.role}</p>
+            <div key={item.id} className={styles.item}>
+              <div className={styles.itemHeader}>
+                <div className={styles.itemTitle}>
+                  <span className={styles.name}>{item.company}</span>
                 </div>
-                <span className={styles.itemDate}>{item.startDate} - {item.endDate}</span>
+                <span className={styles.period}>{item.startDate} - {item.endDate}</span>
               </div>
-              <p className={styles.itemDescription}>{item.description}</p>
-              {item.tags && (
-                <div className={styles.tags}>
-                  {item.tags.map((tag, index) => (
-                    <Tag key={index} text={tag} />
-                  ))}
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className={styles.section}>
-        <SectionTitle>Skills</SectionTitle>
-        <div className={styles.skillsGrid}>
-          {Object.entries(skills).map(([category, items]) => (
-            <div key={category} className={styles.skillCategory}>
-              <h4 className={styles.skillCategoryTitle}>{category}</h4>
-              <div className={styles.skillTags}>
-                {items.map((skill, index) => (
-                  <Tag key={index} text={skill} />
-                ))}
+              <div className={styles.itemContent}>
+                <p className={styles.infoLine}>{item.role}</p>
+                {item.description && (
+                  <p className={styles.description}>{item.description}</p>
+                )}
               </div>
             </div>
           ))}
@@ -75,20 +58,27 @@ function CV() {
 
       {awards.length > 0 && (
         <section className={styles.section}>
-          <SectionTitle>Awards</SectionTitle>
-          <div className={styles.timeline}>
+          <h2 className={styles.sectionTitle}>获奖&荣誉</h2>
+          <div className={styles.awardList}>
             {awards.map((item) => (
-              <div key={item.id} className={styles.timelineItem}>
-                <div className={styles.timelineHeader}>
-                  <div>
-                    <h3 className={styles.itemTitle}>{item.title}</h3>
-                    <p className={styles.itemSubtitle}>{item.organization}</p>
-                  </div>
-                  <span className={styles.itemDate}>{item.date}</span>
-                </div>
-                {item.description && (
-                  <p className={styles.itemDescription}>{item.description}</p>
-                )}
+              <div key={item.id} className={styles.awardItem}>
+                <span className={styles.awardTitle}>{item.title}</span>
+                <span className={styles.awardLevel}>{item.organization}</span>
+                <span className={styles.awardDate}>{item.date}</span>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {skillEntries.length > 0 && (
+        <section className={styles.section}>
+          <h2 className={styles.sectionTitle}>技能</h2>
+          <div className={styles.skillsList}>
+            {skillEntries.map(([category, items]) => (
+              <div key={category} className={styles.skillItem}>
+                <span className={styles.skillCategory}>{category}</span>
+                <span className={styles.skillItems}>{items.join('、')}</span>
               </div>
             ))}
           </div>
