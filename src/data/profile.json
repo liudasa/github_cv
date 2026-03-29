@@ -1,13 +1,13 @@
 {
-  "name": "Wengang",
-  "title": "Python Developer",
+  "name": "刘文港",
+  "title": "程序员",
   "greeting": "Hey there 👋",
-  "introEn": "I'm Wengang, a developer passionate about Python and building practical tools. I enjoy exploring new technologies and creating useful applications.",
-  "introZh": "我是文刚，一名热爱Python的开发者，喜欢探索新技术并构建实用的应用程序。",
-  "motto": "Code with passion, build with purpose.",
+  "introEn": "",
+  "introZh": "",
+  "motto": "",
   "avatar": "",
-  "email": "",
+  "email": "your@email.com",
   "github": "https://github.com/liudasa",
   "linkedin": "",
-  "location": "China"
+  "location": "China 北京"
 }

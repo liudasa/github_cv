@@ -11,9 +11,9 @@ function Home() {
     <div className={styles.home}>
       <section className={styles.hero}>
         <p className={styles.greeting}>{profile.greeting}</p>
-        <h1 className={styles.name}>I'm {profile.name}.</h1>
+        <h1 className={styles.name}>{profile.name}</h1>
         {profile.motto && <p className={styles.slogan}>{profile.motto}</p>}
-        <p className={styles.bio}>{profile.introEn}</p>
+        {profile.introEn && <p className={styles.bio}>{profile.introEn}</p>}
         {profile.introZh && (
           <p className={styles.bioZh}>{profile.introZh}</p>
         )}
